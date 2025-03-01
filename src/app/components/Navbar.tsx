@@ -8,6 +8,7 @@ import Badge from "@mui/material/Badge";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useProfileContext } from '../contexts/profile';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Navbar() {
   
@@ -64,14 +65,14 @@ export default function Navbar() {
           <div className='fixed flex visible left-[30px] lg:relative lg:block lg:left-auto'>
             <button className="inline-flex flex-col items-center group" onClick={()=>setIsProfileOpen(!isProfileOpen)}>
               {/* <AccountCircleOutlinedIcon className='group-hover:text-gray-300'/> */}
-              <img className="rounded-full object-cover" src="/profile.jpg" alt="Profile" srcSet="" width={33} height={33} />
+              <Image className="rounded-full object-cover" src="/profile.jpg" alt="Profile" width={33} height={33} />
               <span className="text-xs mt-1 group-hover:text-gray-300 items-center">Profile ▼</span>
             </button>
             {isProfileOpen && (
               <div className="absolute top-[50px] flex flex-col gap-5 left-0 lg:left-auto lg:right-0 mt-2 bg-white border rounded-md shadow z-30 p-5 text-gray-500 w-max">
                 <div className='flex items-center gap-3'>
                   {/* <AccountCircleOutlinedIcon className='group-hover:text-gray-300 w-[72px] h-[72px]'/> */}
-                  <img className="rounded-full object-cover" src="/profile.jpg" alt="Profile" srcSet="" width={50} height={50} />
+                  <Image className="rounded-full object-cover" src="/profile.jpg" alt="Profile" width={50} height={50} />
                   <div className='flex-col h-full line-height-1'>
                     <h3 className='flex font-bold text-md text-gray-600 whitespace-nowrap'>Maher Saleh</h3>
                     <p className='flex text-xs whitespace-nowrap'>UX UI Designer</p>

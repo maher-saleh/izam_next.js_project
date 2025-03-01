@@ -6,12 +6,10 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { createContext, useContext, useState } from "react";
 import { DrawerProvider } from "./contexts/drawer";
 import { ProfileProvider } from "./contexts/profile";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   return (
     <DrawerProvider>

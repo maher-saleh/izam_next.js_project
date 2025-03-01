@@ -28,12 +28,12 @@ type DraggableNavItemProps = {
 };
 
 const DraggableNavItem: React.FC<DraggableNavItemProps> = ({
-  id, title, visible, editMode, index, parentId, target, moveItem, childrenItems, onTitleChange, onVisibilityChange
+  id, title, visible, editMode, parentId, target, moveItem, childrenItems, onTitleChange, onVisibilityChange
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const hasChildren = childrenItems && childrenItems.length > 0;
 
-  const [{ isDragging }, drag] = useDrag({
+  const [_, drag] = useDrag({
     type: parentId === null ? "PARENT" : "CHILD",
     item: { id, parentId },
     canDrag: editMode,
@@ -42,7 +42,7 @@ const DraggableNavItem: React.FC<DraggableNavItemProps> = ({
     }),
   });
 
-  const {isDrawerOpen, setIsDrawerOpen} = useDrawerContext();
+  const { setIsDrawerOpen } = useDrawerContext();
 
   const [, drop] = useDrop({
     accept: parentId === null ? "PARENT" : "CHILD",

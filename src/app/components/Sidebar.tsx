@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import DraggableNavItem from "./DraggableNavItem";
 import SettingsIcon from "@mui/icons-material/Settings";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -19,7 +19,7 @@ export type MenuItem = {
 
 const Sidebar = () => {
 
-  const { isDrawerOpen, setIsDrawerOpen } = useDrawerContext();
+  const { isDrawerOpen } = useDrawerContext();
   const [originalMenuItems, setOriginalMenuItems] = useState<MenuItem[]>([]);
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [editMode, setEditMode] = useState(false);
@@ -39,7 +39,7 @@ const Sidebar = () => {
     fetchMenuItems();
   }, []);
   
-  const handleCancelClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+  const handleCancelClick = () => {
     setMenuItems([...originalMenuItems]);
   }
 
