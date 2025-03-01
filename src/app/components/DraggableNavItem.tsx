@@ -33,7 +33,7 @@ const DraggableNavItem: React.FC<DraggableNavItemProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const hasChildren = childrenItems && childrenItems.length > 0;
 
-  const [_, drag] = useDrag({
+  const [{ }, drag] = useDrag({
     type: parentId === null ? "PARENT" : "CHILD",
     item: { id, parentId },
     canDrag: editMode,
