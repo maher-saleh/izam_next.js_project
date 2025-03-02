@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-type position = {
+type Position = {
     id: number;
     title: string;
     by: string;
@@ -15,12 +15,12 @@ type position = {
     latest_index: number;
 }
 
-type dropDownProps = {
-  positions: position[];
-  setPositions: React.Dispatch<React.SetStateAction<position[]>>;
+type DropDownProps = {
+  positions: Position[];
+  setPositions: React.Dispatch<React.SetStateAction<Position[]>>;
 }
 
-const Dropdown = ({positions, setPositions}: dropDownProps) => {
+const Dropdown = ({positions, setPositions}: DropDownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [sortBy, setSortBy] = useState('Top match');
 

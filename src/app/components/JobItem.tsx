@@ -27,10 +27,10 @@ export default function JobItem({ position }: JobItemProps) {
             rounded-md cursor-pointer hover:bg-green-100 hover:border-green-600 group transition-all duration-300`}>
             <IconButton onClick={() => setLike(!like)}
                 className={`absolute ml-auto mr-[20px] right-0 shadow-md bg-gray-100 text-gray px-2 py-2 rounded-full border-4 border-black text-gray
-                            hover:text-red-400 hover:bg-gray-100 transition-all duration:200
+                            hover:text-red-400 hover:bg-gray-100 transition-all duration-200
                             ${like?"!bg-red-100 !shadow-red-500/50 !text-red-600" : "bg-gray-100 text-gray"}`}
                         >
-                <FavoriteIcon className="text-sm transition-all duration:200"></FavoriteIcon>
+                <FavoriteIcon className="text-sm transition-all duration-200"></FavoriteIcon>
             </IconButton>
             <h6 className="font-bold text-[20px] leading-[1.4]">{position.title}</h6>
             <p className="text-[14px]">{position.by}</p>

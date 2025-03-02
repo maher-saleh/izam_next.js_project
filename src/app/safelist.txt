@@ -1,0 +1,7 @@
+!bg-green-200
+border-green-600
+hover:bg-green-100
+hover:border-green-600
+!bg-red-100
+!shadow-red-500/50
+!text-red-600

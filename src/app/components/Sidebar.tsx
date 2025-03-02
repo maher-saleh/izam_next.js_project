@@ -141,7 +141,7 @@ const Sidebar = () => {
   return (
     <>
         <aside className={`z-30 fixed left-0 top-16 w-[400px] h-[calc(100vh-10px)] bg-white text-white transition-transform duration-300 ${isDrawerOpen ? "translate-x-0" : "-translate-x-full"}
-                          lg:translate-x-0 md:block `}>
+                          lg:translate-x-0 md:block max-w-[100%]`}>
           <div className="flex justify-between items-center mb-2 border-b-2 border-gray-100 px-4 pt-6 pb-4">
             <h2 className="text-xl font-bold text-gray-700">Menu</h2>
             <button

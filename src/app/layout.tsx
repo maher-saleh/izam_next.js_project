@@ -1,5 +1,5 @@
 "use client";
-
+import { StyledEngineProvider } from '@mui/material/styles';
 import "./globals.css";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -12,21 +12,23 @@ import { ProfileProvider } from "./contexts/profile";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <DrawerProvider>
-      <ProfileProvider>
-        <html lang="en">
-          <body className="min-h-screen bg-gray-100">
-            <div className="flex h-screen">
-              <DndProvider backend={HTML5Backend}><Sidebar /></DndProvider>
-              <Navbar />
-              <div className="ml-0 lg:ml-[400px] w-full p-6 pt-24 transition-margin duration-300">
-                {children}
+    <StyledEngineProvider injectFirst>
+      <DrawerProvider>
+        <ProfileProvider>
+          <html lang="en">
+            <body className="min-h-screen bg-gray-100">
+              <div className="flex h-screen">
+                <DndProvider backend={HTML5Backend}><Sidebar /></DndProvider>
+                <Navbar />
+                <div className="ml-0 lg:ml-[400px] w-full p-6 pt-24 transition-margin duration-300">
+                  {children}
+                </div>
               </div>
-            </div>
-            <Footer />
-          </body>
-        </html>
-      </ProfileProvider>
-    </DrawerProvider>
+              <Footer />
+            </body>
+          </html>
+        </ProfileProvider>
+      </DrawerProvider>
+    </StyledEngineProvider>
   );
 }
