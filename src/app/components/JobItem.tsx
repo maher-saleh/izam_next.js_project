@@ -1,6 +1,7 @@
 import { IconButton } from "@mui/material";
 import { useState } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 type Position = {
     id: number;
@@ -34,8 +35,12 @@ export default function JobItem({ position }: JobItemProps) {
             </IconButton>
             <h6 className="font-bold text-[20px] leading-[1.4]">{position.title}</h6>
             <p className="text-[14px]">{position.by}</p>
-            <p className="text-[14px]">{position.location}</p>
-            <p className="text-[14px]">{position.posted}</p>
+            <div className="flex items-center">
+                <span className="mr-1 text-[18px] text-gray-800 font-medium">⚲</span>
+                <p className="text-[14px] inline">{position.location}</p>
+                <CalendarMonthIcon className="ml-4 mr-1 text-[20px] text-gray-500"/>
+                <p className="text-[14px] inline">{position.posted}</p>
+            </div>
             <div className="mt-2 mb-3">
                 {position.qualifications.map((q, index)=>{
                     return <span key={index} className="text-[14px] px-2 py-1 border border-gray-400 rounded bg-gray-100 mr-1 group-hover:bg-white transition-all duration-300">{q}</span>

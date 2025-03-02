@@ -85,7 +85,7 @@ export default function Home() {
     <div id="body" className="pb-[30px]">
       <Dropdown positions={positions} setPositions={setPositions}></Dropdown>
       <div className="flex gap-2">
-        <div className="flex flex-grow bg-green-600 px-[.5rem] sm:px-5 sm:py-2 flex items-center rounded-md ">
+        <div className="flex flex-grow bg-green-600 px-[.5rem] py-2 sm:px-5 sm:py-2 flex items-center rounded-md">
           <div className="flex-2 flex-grow text-gray-200">
             <h6 className="text-[clamp(16px,1.62vw,20px)] font-bold sm:text-[20px] leading-[1.4]">UI Designer in Egypt</h6>
             <p className="text-[14px]">70 job positions</p>
