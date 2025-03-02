@@ -27,7 +27,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("http://localhost:8081/nav");
+        const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav");
         if (!response.ok) throw new Error("Failed to fetch menu items");
         const data = await response.json();
         setMenuItems([...data]);
@@ -47,7 +47,7 @@ const Sidebar = () => {
     setOriginalMenuItems([...menuItems]);
 
     try {
-      const response = await fetch("http://localhost:8081/nav", {
+      const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const Sidebar = () => {
 
         
         try {
-          fetch("http://localhost:8081/track", {
+          fetch("https://expressbackend-production-958b.up.railway.app/track", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
