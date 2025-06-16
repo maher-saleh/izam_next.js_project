@@ -94,7 +94,7 @@ const Sidebar = () => {
 
         
         try {
-          fetch("https://expressbackend-production-958b.up.railway.app/track", {
+          fetch("https://nodejs-serverless-function-express-gamma-eosin.vercel.app/api/track", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
