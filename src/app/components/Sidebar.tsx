@@ -27,7 +27,8 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav");
+        // const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav");
+        const response = await fetch("https://nodejs-serverless-function-express-gamma-eosin.vercel.app/api/nav");
         if (!response.ok) throw new Error("Failed to fetch menu items");
         const data = await response.json();
         setMenuItems([...data]);
@@ -47,7 +48,8 @@ const Sidebar = () => {
     setOriginalMenuItems([...menuItems]);
 
     try {
-      const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav", {
+      // const response = await fetch("https://expressbackend-production-958b.up.railway.app/nav", {
+      const response = await fetch("https://nodejs-serverless-function-express-gamma-eosin.vercel.app/api/nav", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
